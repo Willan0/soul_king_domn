@@ -14,7 +14,7 @@ import 'package:soul_king_domn/widgets/easy_cached_image.dart';
 import 'package:soul_king_domn/widgets/easy_text.dart';
 import 'package:soul_king_domn/widgets/rounded_container.dart';
 
-import '../pages/home_page.dart';
+import 'home_page.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({Key? key,required this.imgUrl,
