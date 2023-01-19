@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../constant/dimens.dart';
-import '../datas/datas.dart';
 import '../widgets/easy_text.dart';
 import '../widgets/rating_widget.dart';
 import '../widgets/rounded_container.dart';

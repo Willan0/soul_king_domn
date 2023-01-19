@@ -1,4 +1,4 @@
-extension addS on String{
+extension AddS on String{
   String getComment(int length){
     if(isEmpty){
       return "Error";

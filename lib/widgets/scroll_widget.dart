@@ -17,7 +17,7 @@ class ScrollViewWidget extends StatelessWidget {
       height: dWh280x,
       child: ListView.separated(
         separatorBuilder: (context, index) {
-          return const SizedBox(width: 5,);
+          return const SizedBox(width: dMp5x,);
         },
         scrollDirection: Axis.horizontal,
         itemCount: list.length,

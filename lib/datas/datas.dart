@@ -30,7 +30,7 @@ class Data{
   final double starCount;
   Data(this.imgUrl, this.name, this.rating, this.starCount);
 }
-List<List<Data>> tabViewItems = [actionMovies,romanceMovies,adventureMovies,actionMovies,actionMovies,romanceMovies];
+List<List<Data>> tabViewItems = [actionMovies,romanceMovies,adventureMovies,actionMovies,romanceMovies,adventureMovies];
 List<String> tabTitles = ["Action","Romance","Adventure","Comedy","Super Natural","Anime"];
 
 List<Data> popularMovies = [
@@ -125,7 +125,7 @@ List<Data> romanceMovies = [
   Data(
       'https://www.brides.com/thmb/19zKSeuyM20LuGSf4RVsicrJgzM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/MV5BNmE5ZmE3OGItNTdlNC00YmMxLWEzNjctYzAwOGQ5ODg0OTI0XkEyXkFqcGdeQXVyMTMxODk2OTU._V1_-4226402667ea4a0994c6d5f9bcd8ee20.jpg',
       'A Star is born',
-    "1",
+    "1.0",
     1
   ),
   Data(
@@ -137,7 +137,7 @@ List<Data> romanceMovies = [
   Data(
       'https://trailers.apple.com/trailers/independent/press-play/images/poster_2x.jpg',
       'Press Play',
-    "5",
+    "5.0",
     5
   ),
   Data(
@@ -201,5 +201,12 @@ List<Actors> actorList = [
   Actors('Rimi Sen', 'https://www.mrdustbin.com/wp-content/uploads/2020/05/Rimi-Sen.jpg'),
   Actors(' Hrithik Roshan', 'https://www.top10about.com/wp-content/uploads/2016/12/Hrithik-Roshan.jpg'),
   Actors('Shah Rukh Khan', 'https://www.top10about.com/wp-content/uploads/2016/12/Shah-Rukh-Khan.jpeg')
+];
+List<Actors> creatorList = [
+  Actors('James_Cameron', 'https://static.wikia.nocookie.net/ultimatepopculture/images/7/77/James_Cameron_October_2012.jpg'),
+  Actors('Thomas', 'https://media.cnn.com/api/v1/images/stellar/prod/140326204854-network-the-newsroom.jpg'),
+  Actors('Steven Spielberg', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Steven_Spielberg_by_Gage_Skidmore.jpg/1200px-Steven_Spielberg_by_Gage_Skidmore.jpg'),
+  Actors('Michale Moore', 'https://upload.wikimedia.org/wikipedia/commons/0/05/Michael_Moore_66%C3%A8me_Festival_de_Venise_%28Mostra%29_9.jpg'),
+  Actors('Hereditary', 'https://images.bauerhosting.com/legacy/empire-images/articles/5cfe66e4133d503e3a4acae6/ari-aster.jpg'),
 ];
 

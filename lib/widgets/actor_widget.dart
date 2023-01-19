@@ -35,7 +35,7 @@ class ActorWidget extends StatelessWidget {
             height: dWh180x,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: actorList.length,
+              itemCount: list.length,
               itemBuilder: (BuildContext context, int index) {
                 return Container(
                   width: dWh160x,

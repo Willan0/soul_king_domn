@@ -30,9 +30,9 @@ class _TabBarScreenState extends State<TabBarScreen> {
           ),
           Expanded(
               child: Container(
-              padding: const EdgeInsets.only(top: dMp10x),
-              color: cSecondaryColor,
-              child: TabBarScreenView(items: item,)))
+                padding: const EdgeInsets.only(top: dMp10x),
+                color: cSecondaryColor,
+                child: TabBarScreenView(items: item,)))
         ],
       ),
     );

@@ -6,6 +6,7 @@ import 'package:soul_king_domn/constant/string.dart';
 import 'package:soul_king_domn/datas/datas.dart';
 import 'package:soul_king_domn/screens/about_flim.dart';
 import 'package:soul_king_domn/screens/movie_details_title.dart';
+import 'package:soul_king_domn/screens/related_movies.dart';
 import 'package:soul_king_domn/utils/screen_extension.dart';
 import 'package:soul_king_domn/widgets/actor_widget.dart';
 import 'package:soul_king_domn/widgets/button_widget.dart';
@@ -134,7 +135,9 @@ class DetailBody extends StatelessWidget {
         const SizedBox(height: dWh10x,),
         const AboutFilm(),
         const SizedBox(height: dWh10x,),
-        ActorWidget(list: actorList,title: "Creators",more: "More Creator",)
+        ActorWidget(list: creatorList,title: "Creators",more: "More Creator",),
+        const SizedBox(height: dWh10x,),
+        const RelatedMovies()
       ],
     );
   }
