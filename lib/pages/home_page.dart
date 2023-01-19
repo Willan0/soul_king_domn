@@ -51,7 +51,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(height: dMp20x,),
               UpcomingScreen(list: upcomingMovies),
               const SizedBox(height: dMp20x,),
-              ActorWidget(list: actorList),
+              ActorWidget(list: actorList,title: "Actors",more: "More Actors",),
               const SizedBox(height: dMp20x,),
             ],
           ),

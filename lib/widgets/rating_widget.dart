@@ -4,13 +4,13 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../constant/colors.dart';
 
 class RatingStarWidget extends StatelessWidget {
-  const RatingStarWidget({Key? key}) : super(key: key);
-
+  const RatingStarWidget({Key? key,this.starCount=4.5}) : super(key: key);
+  final double starCount;
   @override
   Widget build(BuildContext context) {
     return  RatingBar.builder(
-      initialRating: 3,
-      minRating: 1,
+      initialRating: starCount,
+      minRating: 0,
       direction: Axis.horizontal,
       allowHalfRating: true,
       itemCount: 5,

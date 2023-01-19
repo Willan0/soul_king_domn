@@ -8,8 +8,10 @@ import '../datas/datas.dart';
 import 'more_item.dart';
 
 class ActorWidget extends StatelessWidget {
-  const ActorWidget({Key? key,required this.list,this.checked = false}) : super(key: key);
+  const ActorWidget({Key? key,required this.list,this.checked = false, required this.title, required this.more}) : super(key: key);
   final List<Actors> list ;
+  final String title;
+  final String more;
   final bool checked;
   @override
   Widget build(BuildContext context) {
@@ -20,10 +22,13 @@ class ActorWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: dMp10x,),
+          const SizedBox(height: dMp20x,),
           (checked)?
-          const EasyTextWidgets(data: 'Actors'):
-          const MoreItem(title:"best actors" ,more: "more actors",),
+          Padding(
+            padding: const EdgeInsets.only(left: dMp20x),
+            child: EasyTextWidgets(data: title),
+          ):
+          MoreItem(title:title ,more: more,),
           const SizedBox(height: dMp20x,),
           SizedBox(
             width: dWidth(context),
@@ -33,9 +38,9 @@ class ActorWidget extends StatelessWidget {
               itemCount: actorList.length,
               itemBuilder: (BuildContext context, int index) {
                 return Container(
-                  padding: const EdgeInsets.only(left: dMp10x),
                   width: dWh160x,
                    height: dWh180x,
+                   padding:const EdgeInsets.only(left: dMp20x),
                    child: Stack(
                          children: [
                            EasyCachedImage(imgUrl: list[index].imgUrl, height: dWh200x, width: dWh160x),
@@ -47,7 +52,12 @@ class ActorWidget extends StatelessWidget {
                                mainAxisSize: MainAxisSize.min,
                                children:  [
                                  EasyTextWidgets(data: list.elementAt(index).name,fontSize: fontSize0,),
-                                 const EasyTextWidgets(data: "YOU LIKED 13 MOVIES",fontSize: fontSize,color: cAmber,)
+                                 Row(
+                                   children: const [
+                                      Icon(CupertinoIcons.hand_thumbsup_fill,color: cAmber,size: iconSize,),
+                                      EasyTextWidgets(data: "YOU LIKED 13 MOVIES",fontSize: fontSize,color: cAmber,),
+                                   ],
+                                 )
                                ],
                              ),
                            ),

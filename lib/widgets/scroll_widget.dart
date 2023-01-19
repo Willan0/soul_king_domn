@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:soul_king_domn/constant/dimens.dart';
 import 'package:soul_king_domn/datas/datas.dart';
-import 'package:soul_king_domn/pages/detail_page.dart';
+import 'package:soul_king_domn/widgets/detail_page.dart';
 import 'package:soul_king_domn/utils/screen_extension.dart';
 import 'package:soul_king_domn/widgets/easy_cached_image.dart';
 import 'package:soul_king_domn/widgets/easy_text.dart';
@@ -36,9 +36,9 @@ class ScrollViewWidget extends StatelessWidget {
                 EasyCachedImage(width: dWh140x,height: dWh180x, imgUrl: list[index].imgUrl,),
                 const SizedBox(height: dMp10x,),
                 EasyTextWidgets(data: list[index].name,),
-                Row(children: const [
-                  EasyTextWidgets(data: "3.4"),
-                  RatingStarWidget()
+                Row(children:  [
+                  EasyTextWidgets(data: list[index].rating),
+                  RatingStarWidget(starCount: list[index].starCount,)
                 ],)
               ],
             ),

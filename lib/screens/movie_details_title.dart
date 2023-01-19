@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constant/dimens.dart';
+import '../datas/datas.dart';
 import '../widgets/easy_text.dart';
 import '../widgets/rating_widget.dart';
 import '../widgets/rounded_container.dart';
@@ -25,7 +26,7 @@ final String name;
                 const Spacer(),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
-                  children: const [
+                  children:  const [
                     RatingStarWidget(),
                     EasyTextWidgets(data: '4040 votes',fontSize: fontSize0,color: Colors.grey,fontWeight: FontWeight.bold,)
                   ],

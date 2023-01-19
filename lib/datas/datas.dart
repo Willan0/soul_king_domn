@@ -26,7 +26,9 @@ List<BannerScreen> upcomingMovies = [
 class Data{
   final String imgUrl ;
   final String name;
-  Data(this.imgUrl, this.name);
+  final String rating;
+  final double starCount;
+  Data(this.imgUrl, this.name, this.rating, this.starCount);
 }
 List<List<Data>> tabViewItems = [actionMovies,romanceMovies,adventureMovies,actionMovies,actionMovies,romanceMovies];
 List<String> tabTitles = ["Action","Romance","Adventure","Comedy","Super Natural","Anime"];
@@ -34,105 +36,153 @@ List<String> tabTitles = ["Action","Romance","Adventure","Comedy","Super Natural
 List<Data> popularMovies = [
   Data(
       'https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/12/dungeons-dragons-honor-among-thieves-poster-1.jpg',
-      'Dungeon and Dragon'
+      'Dungeon and Dragon',
+      "3.2",
+      3
   ),
   Data(
       'https://images-na.ssl-images-amazon.com/images/S/pv-target-images/2a756c80a936371f07406cc19e19206dc8ec2d3f8bceb46c03a6e5c291be3a2d._RI_V_TTW_.jpg',
-      '8 and 10 tasveer'
+      '8 and 10 tasveer',
+      "4.5",
+    4.5
   ),
   Data(
       'https://image.tmdb.org/t/p/w185/v0giIi4bTILVhNhJajet3WWY3FA.jpg',
       "Run Lola run",
+      "5.0",
+      5
   ),
   Data(
       'https://channelmyanmar.org/wp-content/uploads/2022/05/insert-3.jpg',
-      "Bosch"
+      "Bosch",
+    '3.5',
+    3.5
   ),
   Data(
       'https://image.tmdb.org/t/p/w185/95DJVfeQh4SUMKaq3Z09Ombtw3X.jpg',
-      'Legacy'
+      'Legacy',
+    '4.5',
+    4.5
   ),
   Data(
       'https://channelmyanmar.org/wp-content/uploads/2022/06/photo_2022-06-01_12-35-20.jpg',
-      'Synopsis of Delinquency '),
-
+      'Synopsis of Delinquency ',
+          "2",
+      2
+  ),
 ];
 List<Data> actionMovies = [
   Data(
   'https://www.scrolldroll.com/wp-content/uploads/2020/01/Captain-America-Civil-War-2016-Best-Hollywood-Action-Movies.jpg',
-   'Civil War'
+   'Civil War',
+    "4.5",
+    4.5
   ),
   Data(
       'https://m.media-amazon.com/images/M/MV5BMWEwNjhkYzYtNjgzYy00YTY2LThjYWYtYzViMGJkZTI4Y2MyXkEyXkFqcGdeQXVyNTM0OTY1OQ@@._V1_FMjpg_UX1000_.jpg',
-      'Uncharted'
+      'Uncharted',
+    '5.0',
+    5
   ),
   Data(
       'https://m.media-amazon.com/images/M/MV5BOWQ3MDg1MTgtMmI4ZC00YjU3LWIyZGEtNmRkNzI0Y2QyN2ExXkEyXkFqcGdeQXVyNzgzODI1OTE@._V1_.jpg',
-      'Contractor'
+      'Contractor',
+    '2.5',
+    2.5
   ),
   Data(
       'https://m.media-amazon.com/images/M/MV5BNTA3N2Q0ZTAtODJjNy00MmQzLWJlMmItOGFmNDI0ODgxN2QwXkEyXkFqcGdeQXVyMTM0NTUzNDIy._V1_.jpg',
-      'Mobius'
+      'Mobius',
+    '4.5',
+    4.5
   ),
   Data(
       'https://wwwimage-us.pplusstatic.com/thumbnails/photos/w370-q80/movie_asset/87/18/37/wom_salone_poster_1400x2100.jpg',
-      'Wrath of Man'
+      'Wrath of Man',
+    '5.0',
+    5
   ),
   Data(
       'https://images.bewakoof.com/utter/content/4863/content_Singham_-_Bollywood_Hindi_Action_Movies_-_Bewakoof_Blog.jpg',
-      'Singham'
+      'Singham',
+    '3.5',
+    3.5
   ),
 ];
 List<Data> romanceMovies = [
   Data(
       'https://trailers.apple.com/trailers/independent/waiting-for-bojangles/images/poster_2x.jpg',
-      'Bojangles'
+      'Bojangles',
+    '4.5',
+    4.5
   ),
   Data(
       'https://www.scrolldroll.com/wp-content/uploads/2022/10/purple-hearts-english-romantic-movies-of-2022.jpg',
-      'Purple Hearts'
+      'Purple Hearts',
+    "5.0",
+    5
   ),
   Data(
       'https://www.brides.com/thmb/19zKSeuyM20LuGSf4RVsicrJgzM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/MV5BNmE5ZmE3OGItNTdlNC00YmMxLWEzNjctYzAwOGQ5ODg0OTI0XkEyXkFqcGdeQXVyMTMxODk2OTU._V1_-4226402667ea4a0994c6d5f9bcd8ee20.jpg',
-      'A Star is born'
+      'A Star is born',
+    "1",
+    1
   ),
   Data(
       'https://thedailyaztec.com/wp-content/uploads/2022/02/Paramount-C-2022-ViacomCBS.-All-Rights-Reserved-607x900.jpg',
-      'Thin Between'
+      'Thin Between',
+    "1.5",
+    1.5
   ),
   Data(
       'https://trailers.apple.com/trailers/independent/press-play/images/poster_2x.jpg',
-      'Press Play'
+      'Press Play',
+    "5",
+    5
   ),
   Data(
       'https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg',
-      'Titanic'
+      'Titanic',
+    '5.0',
+    5.0
   ),
 ];
 List<Data> adventureMovies = [
   Data(
       'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/adventure-movie-poster-template-design-7b13ea2ab6f64c1ec9e1bb473f345547_screen.jpg',
-      "Archer"
+      "Archer",
+    "3.4",
+    3.4
   ),
   Data(
       'https://www.listchallenges.com/f/items2020/dabaa020-1327-4136-bcd9-c27e8fc5fef5.jpg',
-      "Indiana Jones"
+      "Indiana Jones",
+    "3.5",
+    3.5
   ),
   Data(
       'https://i0.wp.com/moviesandmania.com/wp-content/uploads/2021/12/The-Lost-City-movie-film-action-adventure-comedy-2022-Sandra-Bullock-Channing-Tatum-poster.jpg',
-      "The Lost City"
+      "The Lost City",
+    "4.5",
+    4.5
   ),
   Data(
       'https://www.boredpanda.com/blog/wp-content/uploads/2022/05/adventure_movies_36-62739666c7993__700.jpg',
-      "Multiverse of Madness"
+      "Multiverse of Madness",
+    "5.0",
+    5.0
   ),
   Data(
       'https://m.media-amazon.com/images/M/MV5BMjI1MDA3OTczMF5BMl5BanBnXkFtZTgwNjM0Mzc4MTI@._V1_.jpg',
-      "Amazon Adventure"
+      "Amazon Adventure",
+    "3.5",
+    3.5
   ),
   Data(
       'http://innov8tiv.com/wp-content/uploads/2017/02/best-action-movies-1.jpg',
-      "Star War"
+      "Star War",
+    "3.5",
+    3.5
   ),
 ];
 

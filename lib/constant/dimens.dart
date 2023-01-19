@@ -16,6 +16,7 @@ const double dWh250x = 250;
 const double dWh280x = 280;
 const double dWh320x = 320;
 const double dWh350x = 350;
+const double dWh400x = 400;
 
 // margin and padding
 const double dMp0x = 0;
@@ -36,9 +37,11 @@ const double fontSize1 = 22;
 const double fontSize2 = 20;
 const double fontSize3 = 25;
 const double fontSize4 = 50;
+const double iconSize = 15;
 const double iconSize0 = 35;
 const double iconSize1 = 60;
 
-//for Gap
-const double dG20x = 20;
-const double dG10x = 10;
+//for Flex
+const int dF2x =2;
+const int dF3x = 3;
+const int dF19x = 19;
