@@ -19,12 +19,13 @@ class ButtonWidget extends StatelessWidget {
         ),
         label: Text(label),
         style: ElevatedButton.styleFrom(
+
           foregroundColor: cW,
           backgroundColor: (checked)?Colors.transparent:cAmber,
           shape:  RoundedRectangleBorder(
             side: BorderSide(
               width: (checked)?2:0,
-              color: cW
+              color: cW,
             ),
             borderRadius: const BorderRadius.all(Radius.circular(dR30x)),
           )

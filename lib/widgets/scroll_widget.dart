@@ -24,7 +24,12 @@ class ScrollViewWidget extends StatelessWidget {
         itemBuilder: (context, index) {
         return GestureDetector(
           onTap: (){
-            navigateToNextScreen(context,DetailPage(imgUrl: list[index].imgUrl, name: list[index].name));
+            navigateToNextScreen(context,
+                DetailPage(
+                  imgUrl: list[index].imgUrl,
+                  name: list[index].name,
+                  description: list[index].description,
+                ));
           },
           child: Container(
             width: dWh160x,

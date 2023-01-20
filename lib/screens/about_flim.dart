@@ -35,7 +35,7 @@ class AboutFilm extends StatelessWidget {
               child: AboutFilmItems(itemTitle: 'Premier', item: '20-1-2019')),
           Expanded(
               flex: dF19x,
-              child: AboutFilmItems(itemTitle: "Description", item: description)),
+              child: AboutFilmItems(itemTitle: "Description", item: b)),
         ],
       ),
     );

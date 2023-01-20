@@ -18,19 +18,22 @@ import 'home_page.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({Key? key,required this.imgUrl,
-    required this.name
+    required this.name,
+    required this.description
   }) : super(key: key);
   final String imgUrl;
   final String name;
+  final String description;
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
       backgroundColor: cPrimaryColor,
       body: NestedScrollView(
           headerSliverBuilder: (context, innerBoxIsScrolled) => [
-            SliverAppBarItem(imgUrl: imgUrl, name: name)
+            SliverAppBarItem(imgUrl: imgUrl, name: name,)
           ],
-          body: const DetailBody(),
+          body:  DetailBody(description: description,),
       ),
     );
   }
@@ -38,8 +41,8 @@ class DetailPage extends StatelessWidget {
 class SliverAppBarItem extends StatelessWidget {
   const SliverAppBarItem({
     Key? key,
-    required this.imgUrl,
-    required this.name,
+    required this.imgUrl, required this.name,
+
   }) : super(key: key);
 
   final String imgUrl;
@@ -90,8 +93,9 @@ class SliverAppBarItem extends StatelessWidget {
 class DetailBody extends StatelessWidget {
   const DetailBody({
     Key? key,
+    required this.description
   }) : super(key: key);
-
+  final String description;
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -118,9 +122,10 @@ class DetailBody extends StatelessWidget {
               //story line
               const EasyTextWidgets(data: storyLine,color: cWShadow,),
               const SizedBox(height: dWh10x,),
-              const EasyTextWidgets(data: description,fontSize: fontSize0,),
+              EasyTextWidgets(data: description,fontSize: fontSize0,),
               const SizedBox(height: dWh10x,),
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: const [
                   ButtonWidget(icon: 'e4cc', label: "PLAY TRAILER"),
                   SizedBox(width: dMp10x,),
