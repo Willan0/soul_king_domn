@@ -3,11 +3,14 @@ import 'package:soul_king_domn/constant/colors.dart';
 import 'package:soul_king_domn/widgets/easy_text.dart';
 
 import '../constant/dimens.dart';
-import '../constant/string.dart';
 
 class AboutFilm extends StatelessWidget {
-  const AboutFilm({Key? key}) : super(key: key);
-
+  const AboutFilm({Key? key,required this.name,required this.generic,required this.country,required this.date,required this.description}) : super(key: key);
+ final String name;
+ final String generic;
+ final String country;
+ final String date;
+ final String description;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,26 +19,26 @@ class AboutFilm extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: dMp20x),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const[
-          Expanded(
+        children: [
+          const Expanded(
               flex: dF3x,
               child: EasyTextWidgets(data: 'ABOUT FILM',color: cWShadow,fontSize: fontSize0,)),
           // SizedBox(height: dMp10x,),
           Expanded(
               flex: dF2x,
-              child: AboutFilmItems(itemTitle: "Original Title", item: "End Game")),
+              child: AboutFilmItems(itemTitle: "Original Title", item: name)),
           Expanded(
               flex: dF2x,
-              child: AboutFilmItems(itemTitle: "Type", item: "Action")),
+              child: AboutFilmItems(itemTitle: "Type", item: generic)),
           Expanded(
               flex: dF2x,
-              child: AboutFilmItems(itemTitle: "Production", item: "Japan")),
+              child: AboutFilmItems(itemTitle: "Production", item: country)),
           Expanded(
               flex: dF2x,
-              child: AboutFilmItems(itemTitle: 'Premier', item: '20-1-2019')),
+              child: AboutFilmItems(itemTitle: 'Premier', item: date)),
           Expanded(
               flex: dF19x,
-              child: AboutFilmItems(itemTitle: "Description", item: b)),
+              child: AboutFilmItems(itemTitle: "Description", item: description)),
         ],
       ),
     );

@@ -55,7 +55,8 @@ class TabBarTitleItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: tabs.length,
-      child: TabBar(tabs: tabs.map((e) =>  Text(e)).toList(),
+      child: TabBar(
+        tabs: tabs.map((e) =>  Text(e)).toList(),
         isScrollable: true,
         labelColor: cW,
         labelPadding: const EdgeInsets.all(dMp20x),

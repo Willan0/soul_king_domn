@@ -6,8 +6,10 @@ import '../widgets/rating_widget.dart';
 import '../widgets/rounded_container.dart';
 
 class MovieDetailTitle extends StatelessWidget {
-  const MovieDetailTitle({Key? key,required this.name}) : super(key: key);
+  const MovieDetailTitle({Key? key,required this.name,required this.rating,required this.starCount}) : super(key: key);
 final String name;
+final String rating;
+final double starCount;
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -25,12 +27,12 @@ final String name;
                 const Spacer(),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
-                  children:  const [
-                    RatingStarWidget(),
-                    EasyTextWidgets(data: '4040 votes',fontSize: fontSize0,color: Colors.grey,fontWeight: FontWeight.bold,)
+                  children:   [
+                    RatingStarWidget(starCount: starCount,),
+                    const EasyTextWidgets(data: '4040 votes',fontSize: fontSize0,color: Colors.grey,fontWeight: FontWeight.bold,)
                   ],
                 ),
-                const EasyTextWidgets(data: '7.24',fontSize: fontSize4,)
+                EasyTextWidgets(data: rating,fontSize: fontSize4,)
               ],
             ),
             const SizedBox(height: dMp10x,),

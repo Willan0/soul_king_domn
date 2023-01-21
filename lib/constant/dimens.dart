@@ -40,6 +40,7 @@ const double fontSize4 = 50;
 const double iconSize = 15;
 const double iconSize0 = 35;
 const double iconSize1 = 60;
+const double iconSize2 = 25;
 
 //for Flex
 const int dF2x =2;

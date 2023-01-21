@@ -28,7 +28,12 @@ class ScrollViewWidget extends StatelessWidget {
                 DetailPage(
                   imgUrl: list[index].imgUrl,
                   name: list[index].name,
+                  generic: list[index].generic,
+                  country: list[index].country,
+                  date: list[index].releaseDate,
                   description: list[index].description,
+                  rating:  list[index].rating,
+                  starCount: list[index].starCount,
                 ));
           },
           child: Container(

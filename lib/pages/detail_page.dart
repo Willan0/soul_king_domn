@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:soul_king_domn/constant/colors.dart';
 import 'package:soul_king_domn/constant/dimens.dart';
@@ -7,23 +8,30 @@ import 'package:soul_king_domn/datas/datas.dart';
 import 'package:soul_king_domn/screens/about_flim.dart';
 import 'package:soul_king_domn/screens/movie_details_title.dart';
 import 'package:soul_king_domn/screens/related_movies.dart';
-import 'package:soul_king_domn/utils/screen_extension.dart';
 import 'package:soul_king_domn/widgets/actor_widget.dart';
 import 'package:soul_king_domn/widgets/button_widget.dart';
 import 'package:soul_king_domn/widgets/easy_cached_image.dart';
 import 'package:soul_king_domn/widgets/easy_text.dart';
 import 'package:soul_king_domn/widgets/rounded_container.dart';
 
-import 'home_page.dart';
-
 class DetailPage extends StatelessWidget {
   const DetailPage({Key? key,required this.imgUrl,
     required this.name,
-    required this.description
+    required this.generic,
+    required this.country,
+    required this.date,
+    required this.description,
+    required this.rating,
+    required this.starCount
   }) : super(key: key);
   final String imgUrl;
   final String name;
+  final String generic;
+  final String country;
+  final String date;
   final String description;
+  final String rating;
+  final double starCount;
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +39,9 @@ class DetailPage extends StatelessWidget {
       backgroundColor: cPrimaryColor,
       body: NestedScrollView(
           headerSliverBuilder: (context, innerBoxIsScrolled) => [
-            SliverAppBarItem(imgUrl: imgUrl, name: name,)
+            SliverAppBarItem(imgUrl: imgUrl, name: name,rating: rating,starCount: starCount,)
           ],
-          body:  DetailBody(description: description,),
+          body:  DetailBody(name: name,generic:generic,country:country,date:date,description: description,),
       ),
     );
   }
@@ -42,12 +50,13 @@ class SliverAppBarItem extends StatelessWidget {
   const SliverAppBarItem({
     Key? key,
     required this.imgUrl, required this.name,
-
+    required this.rating,required this.starCount
   }) : super(key: key);
 
   final String imgUrl;
   final String name;
-
+  final String rating;
+  final double starCount;
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
@@ -59,7 +68,7 @@ class SliverAppBarItem extends StatelessWidget {
           backgroundColor: cSecondaryShadow,
           child: IconButton(
             onPressed: (){
-              navigateToNextScreen(context,const HomePage());
+              Navigator.of(context).pop();
             },
             icon: const Icon(Icons.arrow_back_ios_new),
           ),
@@ -84,7 +93,7 @@ class SliverAppBarItem extends StatelessWidget {
                       end: Alignment.bottomCenter,
                       stops: [0, 0, 1]),
                 )),
-            MovieDetailTitle(name: name),
+            MovieDetailTitle(name: name, rating: rating,starCount: starCount,),
         ]),
       ),
     );
@@ -93,8 +102,16 @@ class SliverAppBarItem extends StatelessWidget {
 class DetailBody extends StatelessWidget {
   const DetailBody({
     Key? key,
+    required this.name,
+    required this.generic,
+    required this.country,
+    required this.date,
     required this.description
   }) : super(key: key);
+  final String name;
+  final String generic;
+  final String country;
+  final String date;
   final String description;
   @override
   Widget build(BuildContext context) {
@@ -110,12 +127,13 @@ class DetailBody extends StatelessWidget {
               Wrap(
                 spacing: dMp10x,
                 runSpacing: dMp5x,
-                children:   const [
+                children:    const [
                   Icon(Icons.access_time,color: cAmberShadow,),
                   EasyTextWidgets(data: '3hr 12min'),
                   RoundedContainer(data: "Fiction",checked: true,),
                   RoundedContainer(data: "Adventure",checked: true,),
                   RoundedContainer(data: "Action",checked: true,),
+                  Icon(CupertinoIcons.heart,size: iconSize2,color: cW,)
                 ],
               ),
               const SizedBox(height: dWh10x,),
@@ -138,7 +156,7 @@ class DetailBody extends StatelessWidget {
         const SizedBox(height: dWh10x,),
         ActorWidget(list: actorList,checked: true,title: "Actors",more: "_"),
         const SizedBox(height: dWh10x,),
-        const AboutFilm(),
+        AboutFilm(name: name,generic: generic,country: country,date:date,description: description,),
         const SizedBox(height: dWh10x,),
         ActorWidget(list: creatorList,title: "Creators",more: "More Creator",),
         const SizedBox(height: dWh10x,),
