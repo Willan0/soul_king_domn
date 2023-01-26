@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:soul_king_domn/constant/colors.dart';
@@ -15,15 +14,17 @@ import 'package:soul_king_domn/widgets/easy_text.dart';
 import 'package:soul_king_domn/widgets/rounded_container.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({Key? key,required this.imgUrl,
-    required this.name,
-    required this.generic,
-    required this.country,
-    required this.date,
-    required this.description,
-    required this.rating,
-    required this.starCount
-  }) : super(key: key);
+  const DetailPage(
+      {Key? key,
+      required this.imgUrl,
+      required this.name,
+      required this.generic,
+      required this.country,
+      required this.date,
+      required this.description,
+      required this.rating,
+      required this.starCount})
+      : super(key: key);
   final String imgUrl;
   final String name;
   final String generic;
@@ -35,23 +36,37 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: cPrimaryColor,
       body: NestedScrollView(
-          headerSliverBuilder: (context, innerBoxIsScrolled) => [
-            SliverAppBarItem(imgUrl: imgUrl, name: name,rating: rating,starCount: starCount,)
-          ],
-          body:  DetailBody(name: name,generic:generic,country:country,date:date,description: description,),
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
+          SliverAppBarItem(
+            imgUrl: imgUrl,
+            name: name,
+            rating: rating,
+            starCount: starCount,
+          )
+        ],
+        body: DetailBody(
+          name: name,
+          generic: generic,
+          country: country,
+          date: date,
+          description: description,
+        ),
       ),
     );
   }
 }
+
 class SliverAppBarItem extends StatelessWidget {
-  const SliverAppBarItem({
-    Key? key,
-    required this.imgUrl, required this.name,
-    required this.rating,required this.starCount
-  }) : super(key: key);
+  const SliverAppBarItem(
+      {Key? key,
+      required this.imgUrl,
+      required this.name,
+      required this.rating,
+      required this.starCount})
+      : super(key: key);
 
   final String imgUrl;
   final String name;
@@ -67,7 +82,7 @@ class SliverAppBarItem extends StatelessWidget {
           radius: dR30x,
           backgroundColor: cSecondaryShadow,
           child: IconButton(
-            onPressed: (){
+            onPressed: () {
               Navigator.of(context).pop();
             },
             icon: const Icon(Icons.arrow_back_ios_new),
@@ -75,39 +90,53 @@ class SliverAppBarItem extends StatelessWidget {
         ),
       ),
       expandedHeight: dWh280x,
-      actions: const[
-        Icon(Icons.search,size: iconSize0,),
-        SizedBox(width: dMp20x,)
+      actions: const [
+        Icon(
+          Icons.search,
+          size: iconSize0,
+        ),
+        SizedBox(
+          width: dMp20x,
+        )
       ],
       flexibleSpace: FlexibleSpaceBar(
-        background: Stack(
-          children: [
-            EasyCachedImage(imgUrl: imgUrl,width: dWidth(context), height: dWh320x),
-            Container(
-                width: dWidth(context),
-                height: dWh320x,
-                foregroundDecoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [cSecondaryShadow, Colors.transparent, cPrimaryColor],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      stops: [0, 0, 1]),
-                )),
-            MovieDetailTitle(name: name, rating: rating,starCount: starCount,),
+        background: Stack(children: [
+          EasyCachedImage(
+              imgUrl: imgUrl, width: dWidth(context), height: dWh320x),
+          Container(
+              width: dWidth(context),
+              height: dWh320x,
+              foregroundDecoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    colors: [
+                      cSecondaryShadow,
+                      Colors.transparent,
+                      cPrimaryColor
+                    ],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    stops: [0, 0, 1]),
+              )),
+          MovieDetailTitle(
+            name: name,
+            rating: rating,
+            starCount: starCount,
+          ),
         ]),
       ),
     );
   }
 }
+
 class DetailBody extends StatelessWidget {
-  const DetailBody({
-    Key? key,
-    required this.name,
-    required this.generic,
-    required this.country,
-    required this.date,
-    required this.description
-  }) : super(key: key);
+  const DetailBody(
+      {Key? key,
+      required this.name,
+      required this.generic,
+      required this.country,
+      required this.date,
+      required this.description})
+      : super(key: key);
   final String name;
   final String generic;
   final String country;
@@ -122,47 +151,100 @@ class DetailBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: dWh20x,),
+              const SizedBox(
+                height: dWh20x,
+              ),
               //Category
               Wrap(
                 spacing: dMp10x,
                 runSpacing: dMp5x,
-                children:    const [
-                  Icon(Icons.access_time,color: cAmberShadow,),
+                children: const [
+                  Icon(
+                    Icons.access_time,
+                    color: cAmberShadow,
+                  ),
                   EasyTextWidgets(data: '3hr 12min'),
-                  RoundedContainer(data: "Fiction",checked: true,),
-                  RoundedContainer(data: "Adventure",checked: true,),
-                  RoundedContainer(data: "Action",checked: true,),
-                  Icon(CupertinoIcons.heart,size: iconSize2,color: cW,)
+                  RoundedContainer(
+                    data: "Fiction",
+                    checked: true,
+                  ),
+                  RoundedContainer(
+                    data: "Adventure",
+                    checked: true,
+                  ),
+                  RoundedContainer(
+                    data: "Action",
+                    checked: true,
+                  ),
+                  Icon(
+                    CupertinoIcons.heart,
+                    size: iconSize2,
+                    color: cW,
+                  )
                 ],
               ),
-              const SizedBox(height: dWh10x,),
+              const SizedBox(
+                height: dWh10x,
+              ),
               //story line
-              const EasyTextWidgets(data: storyLine,color: cWShadow,),
-              const SizedBox(height: dWh10x,),
-              EasyTextWidgets(data: description,fontSize: fontSize0,),
-              const SizedBox(height: dWh10x,),
+              const EasyTextWidgets(
+                data: storyLine,
+                color: cWShadow,
+              ),
+              const SizedBox(
+                height: dWh10x,
+              ),
+              EasyTextWidgets(
+                data: description,
+                fontSize: fontSize0,
+              ),
+              const SizedBox(
+                height: dWh10x,
+              ),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: const [
                   ButtonWidget(icon: 'e4cc', label: "PLAY TRAILER"),
-                  SizedBox(width: dMp10x,),
-                  ButtonWidget(icon: 'e5f9', label: "RATE MOVIE",checked: true,)
+                  SizedBox(
+                    width: dMp10x,
+                  ),
+                  ButtonWidget(
+                    icon: 'e5f9',
+                    label: "RATE MOVIE",
+                    checked: true,
+                  )
                 ],
               ),
             ],
           ),
         ),
-        const SizedBox(height: dWh10x,),
-        ActorWidget(list: actorList,checked: true,title: "Actors",more: "_"),
-        const SizedBox(height: dWh10x,),
-        AboutFilm(name: name,generic: generic,country: country,date:date,description: description,),
-        const SizedBox(height: dWh10x,),
-        ActorWidget(list: creatorList,title: "Creators",more: "More Creator",),
-        const SizedBox(height: dWh10x,),
+        const SizedBox(
+          height: dWh10x,
+        ),
+        ActorWidget(list: actorList, checked: true, title: "Actors", more: "_"),
+        const SizedBox(
+          height: dWh10x,
+        ),
+        AboutFilm(
+          name: name,
+          generic: generic,
+          country: country,
+          date: date,
+          description: description,
+        ),
+        const SizedBox(
+          height: dWh10x,
+        ),
+        ActorWidget(
+          list: creatorList,
+          title: "Creators",
+          more: "More Creator",
+        ),
+        const SizedBox(
+          height: dWh10x,
+        ),
         const RelatedMovies()
       ],
     );
   }
 }
-
