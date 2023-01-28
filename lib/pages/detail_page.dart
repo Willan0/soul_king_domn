@@ -77,31 +77,33 @@ class SliverAppBarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       backgroundColor: cPrimaryColor,
-      leading: Padding(
-        padding: const EdgeInsets.only(left: dMp10x),
-        child: CircleAvatar(
-          radius: dR30x,
-          backgroundColor: cSecondaryShadow,
-          child: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: const Icon(Icons.arrow_back_ios_new),
-          ),
-        ),
-      ),
       expandedHeight: dWh280x,
-      actions: const [
-        Icon(
-          Icons.search,
-          size: iconSize0,
-        ),
-        SizedBox(
-          width: dMp20x,
-        )
-      ],
       flexibleSpace: FlexibleSpaceBar(
         background: Stack(children: [
+          Positioned(
+            top: dMp20x,
+            child: Row(
+              children: [
+                CircleAvatar(
+                  radius: dR30x,
+                  backgroundColor: cSecondaryShadow,
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    icon: const Icon(Icons.arrow_back_ios_new),
+                  ),
+                ),
+                const Icon(
+                  Icons.search,
+                  size: iconSize0,
+                ),
+                const SizedBox(
+                  width: dMp20x,
+                )
+              ],
+            ),
+          ),
           EasyCachedImage(
               imgUrl: imgUrl, width: dWidth(context), height: dWh320x),
           Container(
