@@ -4,14 +4,15 @@ import 'package:soul_king_domn/constant/colors.dart';
 import 'package:soul_king_domn/constant/dimens.dart';
 import 'package:soul_king_domn/constant/string.dart';
 import 'package:soul_king_domn/datas/datas.dart';
-import 'package:soul_king_domn/screens/about_flim.dart';
-import 'package:soul_king_domn/screens/movie_details_title.dart';
-import 'package:soul_king_domn/screens/related_movies.dart';
 import 'package:soul_king_domn/widgets/actor_widget.dart';
 import 'package:soul_king_domn/widgets/button_widget.dart';
 import 'package:soul_king_domn/widgets/easy_cached_image.dart';
 import 'package:soul_king_domn/widgets/easy_text.dart';
 import 'package:soul_king_domn/widgets/rounded_container.dart';
+
+import '../view_items/about_flim.dart';
+import '../view_items/movie_details_title.dart';
+import '../view_items/related_movies.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage(

@@ -3,12 +3,12 @@ import 'package:soul_king_domn/constant/colors.dart';
 import 'package:soul_king_domn/constant/dimens.dart';
 import 'package:soul_king_domn/constant/string.dart';
 import 'package:soul_king_domn/datas/datas.dart';
-import 'package:soul_king_domn/screens/card_screen.dart';
-import 'package:soul_king_domn/screens/slide_show.dart';
-import 'package:soul_king_domn/screens/tab_bar_screen.dart';
-import 'package:soul_king_domn/screens/upcoming_screen.dart';
 import 'package:soul_king_domn/widgets/actor_widget.dart';
 
+import '../view_items/card_screen.dart';
+import '../view_items/slide_show.dart';
+import '../view_items/tab_bar_screen.dart';
+import '../view_items/upcoming_screen.dart';
 import '../widgets/easy_text.dart';
 import '../widgets/more_item.dart';
 import '../widgets/scroll_widget.dart';
