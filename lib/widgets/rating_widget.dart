@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../constant/colors.dart';
+import '../constant/dimens.dart';
 
 class RatingStarWidget extends StatelessWidget {
   const RatingStarWidget({Key? key,this.starCount=4.5}) : super(key: key);
@@ -14,7 +15,7 @@ class RatingStarWidget extends StatelessWidget {
       direction: Axis.horizontal,
       allowHalfRating: true,
       itemCount: 5,
-      itemSize: 20,
+      itemSize: dWh20x,
       unratedColor: cWShadow,
       itemBuilder: (context, _) => const Icon(
         Icons.star,
